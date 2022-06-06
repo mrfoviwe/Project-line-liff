@@ -29,10 +29,10 @@ export class AppComponent {
 
     if (liff.isLoggedIn()) {
       let getProfile = await liff.getProfile();
+      let idToken = await liff.getDecodedIDToken();
       this.getProfile.displayName = getProfile.displayName;
       this.getProfile.userId = getProfile.userId;
       this.getProfile.pictureUrl = getProfile.pictureUrl;
-      let idToken = liff.getDecodedIDToken();
       console.log(idToken);
     }else {
       liff.login();

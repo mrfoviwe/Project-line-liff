@@ -16,14 +16,14 @@
   <!-- <div class="bg-blue-400">
     <div class="flex items-center justify-center h-20 text-white ">Hello world!!!</div>
   </div> -->
-  <div class="container ">
+  <div class="container mx-auto">
     <div class="Profilepicture flex items-center justify-center">
-      <img class="flex items-center justify-center rounded-full h-60 w-60" [src]="getProfile.pictureUrl">
+      <img class="label-center rounded-full h-60 w-60 mt-10" [src]="getProfile.pictureUrl">
     </div>
-    <div class="flex items-center justify-center h-20">
+    <div class="label-center h-20">
       <h1>Name : {{getProfile.displayName}}</h1>
     </div>
-    <div class="flex items-center justify-center">
+    <div class="label-center">
       <h1>User ID : {{getProfile.userId}}</h1>
     </div>
   </div>
