@@ -4,16 +4,30 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  <div class="bg-blue-400">
+  <!-- <div class="bg-blue-400">
     <div class="flex items-center justify-center h-20 text-white ">Hello world!!!</div>
+  </div> -->
+  <div class="container ">
+    <div class="Profilepicture flex items-center justify-center">
+      <img class="flex items-center justify-center rounded-full h-60 w-60" [src]="getProfile.pictureUrl">
+    </div>
+    <div class="flex items-center justify-center h-20">
+      <h1>Name : {{getProfile.displayName}}</h1>
+    </div>
+    <div class="flex items-center justify-center">
+      <h1>User ID : {{getProfile.userId}}</h1>
+    </div>
   </div>
 
 </body>
+
 </html>
