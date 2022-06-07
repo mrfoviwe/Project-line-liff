@@ -7,6 +7,9 @@ interface getProfile {
   userId: string;
   pictureUrl: string | undefined;
 }
+interface idToken {
+  email: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -20,7 +23,11 @@ export class AppComponent {
     userId: '',
     pictureUrl: '',
   };
- 
+
+  idToken: idToken = {
+    email: '',
+  }
+
   async ngOnInit() {
     WebcamUtil.getAvailableVideoInputs()
       .then((mediaDevices: MediaDeviceInfo[]) => {
@@ -40,17 +47,15 @@ export class AppComponent {
       this.getProfile.displayName = getProfile.displayName;
       this.getProfile.userId = getProfile.userId;
       this.getProfile.pictureUrl = getProfile.pictureUrl;
-      console.log(idToken);
+      this.idToken.email = this.idToken.email
+      console.log(this.idToken.email);
 
-      
       // await navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } })
     } else {
       liff.login();
     }
 
-    
   }
-
 
   // toggle webcam on/off
   public showWebcam = true;
