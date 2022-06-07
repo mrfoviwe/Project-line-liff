@@ -8,7 +8,7 @@ interface getProfile {
   pictureUrl: string | undefined;
 }
 interface idToken {
-  email: string;
+  email: string | undefined;
 }
 
 @Component({
@@ -47,8 +47,8 @@ export class AppComponent {
       this.getProfile.displayName = getProfile.displayName;
       this.getProfile.userId = getProfile.userId;
       this.getProfile.pictureUrl = getProfile.pictureUrl;
-      this.idToken.email = this.idToken.email
-      console.log(this.idToken.email);
+      this.idToken.email = idToken?.email
+      console.log(idToken?.email);
 
       // await navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } })
     } else {
