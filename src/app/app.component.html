@@ -1,65 +1,21 @@
-<!-- <div class="button-container">
-  <button class="flex items-center justify-center h-10 w-40 bg-blue-300 text-white rounded-full hover:bg-blue-400">Click Me!!!</button>
-</div> -->
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <!-- <div class="bg-blue-400">
-    <div class="flex items-center justify-center h-20 text-white ">Hello world!!!</div>
-  </div> -->
-  <div class="container mx-auto">
-    <div class="Profilepicture flex items-center justify-center">
-      <img class="label-center rounded-full h-60 w-60 mt-10" [src]="getProfile.pictureUrl">
-    </div>
-    <div class="show-detail">
-      <h1 class="label-center mt-10">Name : {{getProfile.displayName}}</h1>
-      <h1 class="label-center m-5">User ID : {{getProfile.userId}}</h1>
-      <h1 class="label-center">email : {{idToken.email}}</h1>
-    </div>
-    <div class="mt-5" style="text-align:center">
-      <h1>
-        Ngx-Webcam Demo
-      </h1>
-
-      <div>
-        <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
-          *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
-          [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
-          (initError)="handleInitError($event)"></webcam>
-        <br />
-        <button class="actionBtn h-10 w-40 mr-5 bg-green-300 hover:bg-green-400 rounded"
-          (click)="triggerSnapshot();">Take A Snapshot</button>
-        <button class="actionBtn h-10 w-40 bg-red-300 hover:bg-red-400 rounded" (click)="toggleWebcam();">Toggle
-          Webcam</button>
-        <br />
-        <!-- <button class="actionBtn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next Webcam</button> -->
-        <!-- <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label for="cameraSwitchCheckbox">Allow Camera Switch</label>
-        <br/>
-        DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
-        <button (click)="showNextWebcam(deviceId);">Activate</button> -->
-      </div>
-    </div>
+<div class="bg-black p-10" style="height: 100vh; width: 100vw;text-align: center; ">
+  <div *ngIf="showWebcam" class="flex justify-center items-center md:shrink-0"
+    style="height:75vh;display: flex;">
+    <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+      [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable" [videoOptions]="videoOptions"
+      [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)" (initError)="handleInitError($event)">
+    </webcam>
+    <img class="img-camera w-44 sm:w-64 md:w-72" src="../assets/img/face-id.png">
   </div>
-
-
-  <div class="snapshot flex justify-center items-center m-10" *ngIf="webcamImage">
-    <!-- <h2 class="flex">Nice one!</h2> -->
-    <img [height]="600" [width]="600" [src]="webcamImage.imageAsDataUrl" />
+  <div class="mt-5 mb-10 label-center">
+    <button class="actionBtn h-20 w-20 bg-white rounded-full " (click)="triggerSnapshot();"></button>
   </div>
+  <!-- <div class="snapshot flex justify-center items-center m-10" *ngIf="webcamImage">
+      <img class="camera-mirror" [height]="600" [width]="600" [src]="webcamImage.imageAsDataUrl" />
+    </div> -->
 
   <h4 *ngIf="errors.length > 0">Messages:</h4>
   <ul *ngFor="let error of errors">
     <li>{{error | json}}</li>
   </ul>
-</body>
-
-</html>
+</div>

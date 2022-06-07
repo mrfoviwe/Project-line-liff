@@ -78,6 +78,7 @@ export class AppComponent {
 
   public triggerSnapshot(): void {
     this.trigger.next();
+    this.toggleWebcam()
   }
 
   public toggleWebcam(): void {
