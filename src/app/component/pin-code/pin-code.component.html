@@ -1,0 +1,42 @@
+<div class="fixed inset-0 w-full h-full flex bg-blue-100 items-center justify-center ">
+  <div class="bg-white rounded-lg shadow p-4" x-data="app()">
+    <div class="text-lg flex items-center justify-center">Enter your pin code</div>
+    <div class="flex">
+      <code-input class="h-52 w-60" [isCodeHidden]="false" [isNonDigitsCode]="false" [codeLength]="4"
+        (codeChanged)="onCodeChanged($event)" (codeCompleted)="onCodeCompleted($event)">
+      </code-input>
+    </div>
+    <div class="flex justify-center items-center">
+      <button class="h-10 w-36 bg-blue-300 rounded text-white">Confirm</button>
+    </div>
+    <!-- <div class="d-flex mt-16">
+      <div>
+        <table>
+          <tr>
+            <td><button (click)="enter(1)">1</button></td>
+            <td><button (click)="enter(2)">2</button></td>
+            <td><button (click)="enter(3)">3</button></td>
+
+          </tr>
+          <tr>
+            <td><button (click)="enter(4)">4</button></td>
+            <td><button (click)="enter(5)">5</button></td>
+            <td><button (click)="enter(6)">6</button></td>
+
+          </tr>
+          <tr>
+            <td><button (click)="enter(7)">7</button></td>
+            <td><button (click)="enter(8)">8</button></td>
+            <td><button (click)="enter(9)">9</button></td>
+
+          </tr>
+          <tr>
+            <td></td>
+            <td><button (click)="enter(0)">0</button></td>
+            <td><button>Del</button></td>
+          </tr>
+        </table>
+      </div>
+    </div> -->
+  </div>
+</div>

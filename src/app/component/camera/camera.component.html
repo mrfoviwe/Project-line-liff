@@ -1,4 +1,4 @@
-<!-- <div class="bg-black p-10" style="height: 100vh; width: 100vw;text-align: center; ">
+<div class="bg-black p-10 " style="height: 100vh; width: 100vw;text-align: center; ">
   <div *ngIf="showWebcam" class="flex justify-center items-center md:shrink-0"
     style="height:75vh;display: flex;">
     <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
@@ -10,14 +10,13 @@
   <div class="mt-5 mb-10 label-center">
     <button class="actionBtn h-20 w-20 bg-white rounded-full " (click)="triggerSnapshot();"></button>
   </div>
-   <div class="snapshot flex justify-center items-center m-10" *ngIf="webcamImage">
+  <!-- <div class="snapshot flex justify-center items-center m-10" *ngIf="webcamImage">
       <img class="camera-mirror" [height]="600" [width]="600" [src]="webcamImage.imageAsDataUrl" />
-    </div>
+    </div> -->
 
   <h4 *ngIf="errors.length > 0">Messages:</h4>
   <ul *ngFor="let error of errors">
     <li>{{error | json}}</li>
   </ul>
-</div> -->
-<!-- <app-pin-code></app-pin-code> -->
-<app-camera></app-camera>
+</div>
+
